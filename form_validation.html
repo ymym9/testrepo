@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script type="application/javascript">
+        function checkdata(){
+            // Create references to the Inputs we wish to validate
+            var username = document.getElementbyId("name")
+            var emailid = document.getElementbyId("email")
+            var zipcode = document.getElementbyId("zipcode")
+
+            // Check if username field is empty
+            if (username.value == ""){
+                alert("Please enter your Username");
+                username.focus();
+                return false
+            }
+			
+            if (emailid.value == ""){
+                alert("Please enter your E-mail adress");
+                emailid.focus();
+                return false
+            }
+
+            // Check if zipcode field is emptydoes not contain a number
+            if (zipcode.value == ""){
+                alert("Please enter your Zip code");
+                zipcode.focus();
+                return false
+            }
+
+            // Check if zipcode field contains an that matches the format 
+            // of a zip code
+            if (zipcode.value.length != 5 ){
+                alert("Wrong Zip Code format");
+                zipcode.focus();
+                return false
+            }
+            return true
+        }    
+    </script>
+    <title>Contact Details</title>
+    </head>
+    <body>
+        <h2>Enter your contact Details:</h2> <br>
+        <form id="form1">
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <br>
+            <label for="email">E-mail ID :</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <br>
+            <label for="zipcode">Zip code :</label>
+            <input type="text" id="zipcode" name="zipcode">
+            <br>
+            <br>
+            <input type="submit" onclick="checkdata()" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+</html>
